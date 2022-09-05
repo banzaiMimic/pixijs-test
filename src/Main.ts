@@ -1,6 +1,5 @@
 import { Container } from "pixi.js";
 import { Preloader } from "./demos/Preloader";
-import dat from "dat.gui";
 import { HelloDragonBones } from "./demos/HelloDragonBones";
 import { AnimationBase } from "./demos/AnimationBase";
 import { DragonBonesEvent } from "./demos/DragonBonesEvent";
@@ -28,24 +27,7 @@ export class Main extends Container {
 	private onAssetsLoaded() {
 		this.removeChild(this.preloader);
 		this.preloader.destroy({ children: true });
-
-		const gui = new dat.GUI();
-		gui.add(this, "helloDragonBones");
-		gui.add(this, "animationBase");
-		gui.add(this, "dragonBonesEvent");
-		gui.add(this, "animationLayer");
-		gui.add(this, "boneOffset");
-		gui.add(this, "inverseKinematics");
-		gui.add(this, "boundingBox");
-		gui.add(this, "multiTextureAltas");
-		gui.add(this, "replaceSlotDisplay");
-		gui.add(this, "replaceSkin");
-		gui.add(this, "replaceAnimation");
-		gui.add(this, "coreElement");
-		gui.add(this, "eyeTracking");
-		gui.add(this, "performanceTest");
-
-		this.currentDemo = new HelloDragonBones();
+		this.currentDemo = new DragonBonesEvent();
 		this.addChild(this.currentDemo);
 	}
 
